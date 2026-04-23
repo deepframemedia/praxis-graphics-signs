@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Praxis Graphics & Signs · Hialeah, Miami</title>
+  <meta name="description" content="Car wraps, señales exteriores, logos dimensionales y diseño gráfico en Hialeah, Miami. (786) 333-8097"/>
+  <meta name="theme-color" content="#07070d"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Space+Grotesk:wght@500;700;900&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<!-- ════════════════════════════════════════════
+     TOP NAVBAR
+════════════════════════════════════════════ -->
+<nav class="topnav" id="topnav" role="navigation">
+  <!-- Logo -->
+  <a href="#hero" class="nav-logo" aria-label="Praxis — inicio">
+    <img src="./branding/logo.png" alt="Praxis" class="nav-logo-img"/>
+  </a>
+
+  <div class="nav-spacer"></div>
+
+  <!-- Lang toggle (right) -->
+  <label class="lang-label" aria-label="Cambiar idioma ES / EN">
+    <input type="checkbox" id="langCheckbox" class="lang-sr"/>
+    <div class="lang-track">
+      <div class="lang-pill"></div>
+      <span class="lang-opt lang-es">ES</span>
+      <span class="lang-opt lang-en">EN</span>
+    </div>
+  </label>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     PAGE
+════════════════════════════════════════════ -->
+<main class="page" role="main">
+
+  <!-- ── HERO ────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-ring">
+      <div class="hero-ring-c"></div>
+      <div class="hero-ring-c inner"></div>
+      <div class="orbit-dot od-1" aria-hidden="true"></div>
+      <div class="orbit-dot od-2" aria-hidden="true"></div>
+      <div class="orbit-dot od-3" aria-hidden="true"></div>
+      <div class="hero-logo-wrap">
+        <img src="./branding/isotipo.png" alt="Praxis Graphics & Signs" class="hero-logo"/>
+      </div>
+    </div>
+    <p class="hero-tagline" data-i18n="tagline">Graphics &amp; Signs · Hialeah, Miami FL</p>
+    <div class="hero-loc">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="var(--blue)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <span data-i18n="location">Hialeah, FL 33015</span>
+    </div>
+  </section>
+
+  <!-- ── SERVICES CAROUSEL ──────────────────── -->
+  <div class="carousel-section" id="services">
+    <p class="sec-label" data-i18n="label_services">Nuestros Servicios</p>
+    <div class="carousel-mask" id="carouselWrap">
+      <div class="carousel-track" id="carouselTrack"></div>
+    </div>
+    <p class="carousel-hint" data-i18n="carousel_hint">Toca para ver más →</p>
+  </div>
+
+  <!-- ── CONTACT CARDS ──────────────────────── -->
+  <div class="section-wrap glass" id="contact">
+    <p class="sec-label" data-i18n="label_contact">Contáctanos</p>
+
+    <a class="card card-tint-blue" href="tel:7863338097">
+      <div class="card-icon i-blue">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">(786) 333-8097</div>
+        <div class="card-sub" data-i18n="phone1_sub">Llámanos ahora</div>
+      </div>
+      <svg class="card-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <a class="card card-tint-cyan" href="tel:7863338195">
+      <div class="card-icon i-blue2">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">(786) 333-8195</div>
+        <div class="card-sub" data-i18n="phone2_sub">Segunda línea</div>
+      </div>
+      <svg class="card-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <a class="card card-tint-green" href="https://wa.me/17863338097?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20servicio" target="_blank" rel="noopener">
+      <div class="card-icon i-green">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title" data-i18n="wa_title">WhatsApp</div>
+        <div class="card-sub"   data-i18n="wa_sub">Cotiza por mensaje</div>
+      </div>
+      <svg class="card-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <a class="card card-tint-purple" href="mailto:info@praxisgraphics.com">
+      <div class="card-icon i-purple">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title" data-i18n="email_title">Email</div>
+        <div class="card-sub">info@praxisgraphics.com</div>
+      </div>
+      <svg class="card-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <!-- ── LOCATION ──────────────────────────── -->
+  <div class="section-wrap" id="location">
+    <p class="sec-label" data-i18n="label_location">Ubicación</p>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.7!2d-80.3041326!3d25.9257913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90959a3d8efd7%3A0xc8790f0e33d1de56!2sPraxis%20Graphics%20%26%20Signs!5e0!3m2!1ses!2sus!4v1700000000000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Praxis Graphics & Signs — Hialeah, FL">
+      </iframe>
+    </div>
+    <a class="card glass" href="https://maps.google.com/?cid=14445593833440927318" target="_blank" rel="noopener">
+      <div class="card-icon i-red">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title" data-i18n="addr_title">6135 NW 167th St Suite E16, Hialeah FL</div>
+        <div class="card-sub"   data-i18n="addr_sub">Ver en Google Maps</div>
+      </div>
+      <svg class="card-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <!-- ── HOURS ─────────────────────────────── -->
+  <div class="section-wrap" id="hours">
+    <p class="sec-label" data-i18n="label_hours">Horarios</p>
+    <div class="hours-glass glass">
+      <div class="hours-item">
+        <span class="h-day"  data-i18n="hours_wf">Lun – Vie</span>
+        <span class="h-time">9am – 6pm</span>
+      </div>
+      <div class="hours-item">
+        <span class="h-day"  data-i18n="hours_sa">Sábado</span>
+        <span class="h-time">10am – 3pm</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── QUICK QUOTE FORM ───────────────────── -->
+  <div class="section-wrap" id="quote">
+    <p class="sec-label" data-i18n="label_form">Cotización Rápida</p>
+    <div class="form-inner glass">
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="formName" data-i18n="form_name">Nombre</label>
+            <input type="text" id="formName" autocomplete="name" placeholder="Tu nombre"/>
+          </div>
+          <div class="form-group">
+            <label for="formPhone" data-i18n="form_phone">Teléfono o Email</label>
+            <input type="text" id="formPhone" autocomplete="tel" placeholder="(786) 000-0000"/>
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:.55rem">
+          <label for="formService" data-i18n="form_service">Servicio de interés</label>
+          <select id="formService"></select>
+        </div>
+        <button type="submit" class="btn-submit-wa">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-i18n="form_submit">Enviar por WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── SOCIAL ──────────────────────────────── -->
+  <!-- Squircle clip path -->
+  <svg width="0" height="0" style="position:absolute;pointer-events:none" aria-hidden="true">
+    <defs>
+      <clipPath id="squircleClip" clipPathUnits="objectBoundingBox">
+        <path d="M 0,0.5 C 0,0 0,0 0.5,0 S 1,0 1,0.5 1,1 0.5,1 0,1 0,0.5"/>
+      </clipPath>
+    </defs>
+  </svg>
+
+  <div class="social-row" id="socialRow">
+    <a class="s-btn s-instagram" href="https://www.instagram.com/praxisgraphicsandsigns/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a class="s-btn s-website" href="https://praxisgraphics.com" target="_blank" rel="noopener" aria-label="Website">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+    </a>
+    <a class="s-btn s-google" href="https://g.page/r/UgjIeQ8OM9HeVg/review" target="_blank" rel="noopener" aria-label="Dejar reseña en Google">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1H12.18V13.83H18.69C18.36 17.64 15.19 19.27 12.19 19.27C8.36 19.27 5 16.25 5 12C5 7.9 8.2 4.73 12.2 4.73C15.29 4.73 17.1 6.7 17.1 6.7L19 4.72C19 4.72 16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12C2.03 17.05 6.16 22 12.25 22C17.6 22 21.5 18.33 21.5 12.91C21.5 11.76 21.35 11.1 21.35 11.1Z"/></svg>
+    </a>
+  </div>
+
+  <p class="footer-txt" id="footerTxt" data-i18n="footer">© 2025 Praxis Graphics &amp; Signs · Hialeah, FL</p>
+
+</main>
+
+<!-- ════════════════════════════════════════════
+     SERVICE MODAL
+════════════════════════════════════════════ -->
+<div id="modal" class="modal-overlay" hidden role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Cerrar">✕</button>
+    <div class="modal-img-wrap">
+      <img id="modal-img" src="" alt=""/>
+      <div id="modal-accent"></div>
+    </div>
+    <div class="modal-body">
+      <h2 class="modal-title" id="modal-title"></h2>
+      <p  class="modal-sub"   id="modal-sub"></p>
+      <p  class="modal-desc"  id="modal-desc"></p>
+      <div class="modal-features" id="modal-features"></div>
+      <div class="modal-actions">
+        <button class="btn-modal-wa" id="modal-wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-i18n="modal_quote">Cotizar por WhatsApp</span>
+        </button>
+        <button class="btn-modal-call" id="modal-call-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          <span data-i18n="modal_call">Llamar ahora</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     STICKY BOTTOM BAR
+════════════════════════════════════════════ -->
+<div class="sticky-bar" id="stickyBar" role="toolbar">
+  <a class="sbar-btn sbar-quote" href="#quote" id="sbarQuote">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 14.66V20a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg>
+    <span data-i18n="sbar_quote">Cotizar</span>
+  </a>
+  <a class="sbar-btn sbar-wa" href="https://wa.me/17863338097?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20servicio" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span data-i18n="sbar_wa">WhatsApp</span>
+  </a>
+  <a class="sbar-btn sbar-call" href="tel:7863338097">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    <span data-i18n="sbar_call">Llamar</span>
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

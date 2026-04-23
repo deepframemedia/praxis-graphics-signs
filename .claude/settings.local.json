@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__stitch__create_project",
+      "mcp__stitch__generate_screen_from_text",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('projectId:', d.get\\('projectId'\\)\\); print\\('sessionId:', d.get\\('sessionId'\\)\\); screens=d.get\\('outputComponents',[]\\); [print\\('screen:', s.get\\('screenId','?'\\), s.get\\('title','?'\\)\\) for s in screens if isinstance\\(s,dict\\)]\")",
+      "mcp__stitch__list_screens",
+      "Bash(python *)",
+      "mcp__stitch__fetch_screen_image",
+      "mcp__stitch__fetch_screen_code",
+      "Bash(python3 *)",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:praxis-graphics-signs.wheree.com)",
+      "WebFetch(domain:praxisgraphics.com)",
+      "WebFetch(domain:local.yahoo.com)",
+      "Bash(git --version)",
+      "Bash(gh --version)"
+    ]
+  }
+}
