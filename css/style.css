@@ -252,7 +252,7 @@ body::before {
 
 /* Service photo card */
 .c-card {
-  width: 224px; height: 174px; border-radius: 13px;
+  width: 224px; height: 230px; border-radius: 13px;
   position: relative; overflow: hidden; flex-shrink: 0;
   border: 1px solid var(--g-bdr); cursor: pointer;
   /* GSAP controls transform */
@@ -366,6 +366,7 @@ body::before {
 .hours-item:first-child { border-right: 1px solid var(--g-bdr); }
 .h-day  { font-size: .58rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: .22rem; }
 .h-time { font-family: var(--font-h); font-size: .94rem; font-weight: 700; }
+.h-time-sm { font-size: .7rem; text-align: center; line-height: 1.3; }
 
 /* ── FORM ────────────────────────────────────────────── */
 .form-inner {
@@ -377,30 +378,38 @@ body::before {
   font-size: .58rem; font-weight: 800; letter-spacing: .15em;
   text-transform: uppercase; color: var(--muted);
 }
+.input-wrap {
+  position: relative; display: flex; align-items: center;
+}
+.input-icon {
+  position: absolute; left: .7rem; width: 15px; height: 15px;
+  color: var(--muted); pointer-events: none; flex-shrink: 0;
+}
 .form-group input,
 .form-group select {
   width: 100%;
   background: rgba(255,255,255,.04); border: 1px solid var(--g-bdr);
-  border-radius: 9px; padding: .6rem .8rem;
+  border-radius: 9px; padding: .6rem .8rem .6rem 2.1rem;
   color: var(--text); font-family: var(--font-b); font-size: .84rem;
   outline: none; transition: border-color .2s, background .2s;
 }
 .form-group input:focus,
 .form-group select:focus { border-color: var(--blue); background: rgba(0,153,204,.04); }
+.input-wrap:focus-within .input-icon { color: var(--blue); }
 .form-group input::placeholder { color: var(--muted); }
 .form-group select option { background: #111; }
 
-.btn-submit-wa {
+.btn-submit-email {
   width: 100%; margin-top: .6rem;
   display: flex; align-items: center; justify-content: center; gap: .55rem;
   padding: .82rem; border-radius: 10px;
-  background: linear-gradient(135deg, #1a9e3f, var(--green));
+  background: linear-gradient(135deg, #7c3aed, var(--purple));
   color: #fff; font-family: var(--font-h); font-size: .84rem; font-weight: 800;
   letter-spacing: .03em; cursor: pointer; border: none;
-  box-shadow: 0 4px 16px rgba(37,211,102,.28);
+  box-shadow: 0 4px 16px rgba(168,85,247,.28);
   transition: opacity .2s, transform .2s;
 }
-.btn-submit-wa:hover { opacity: .91; transform: translateY(-1px); }
+.btn-submit-email:hover { opacity: .91; transform: translateY(-1px); }
 
 /* ── COLORED CONTACT CARDS ───────────────────────────── */
 .card-tint-blue {
@@ -584,4 +593,58 @@ body::before {
   background: linear-gradient(135deg, var(--red), #cc2222);
   color: #fff;
   box-shadow: 0 2px 12px rgba(255,51,51,.25);
+}
+
+/* ══════════════════════════════════════════════
+   DESKTOP LAYOUT  ≥ 768px
+══════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  /* Remove sticky bar space */
+  body { padding-bottom: 0; }
+  .sticky-bar { display: none; }
+
+  /* 2-column page grid */
+  .page {
+    max-width: 1060px;
+    padding: 2.5rem 2.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+
+  /* Full-width rows */
+  .hero,
+  .carousel-section,
+  #quote,
+  .social-row,
+  #footerTxt { grid-column: 1 / -1; }
+
+  /* Left col: contact   Right col: location + hours */
+  #contact  { grid-column: 1; margin-bottom: 1.25rem; }
+  #location { grid-column: 2; margin-bottom: 1.25rem; }
+  #hours    { grid-column: 2; margin-bottom: 1.25rem; }
+
+  /* Hero — slightly larger ring */
+  .hero { margin-bottom: .5rem; }
+  .hero-ring { width: 160px; height: 160px; }
+  .hero-logo  { width: 92px;  height: 92px; }
+
+  /* Carousel — taller, wider cards */
+  .c-card { width: 300px; height: 270px; }
+
+  /* Map taller on desktop */
+  .map-wrap { height: 240px; }
+
+  /* Contact cards — 2×2 internal grid */
+  #contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+  }
+  #contact .sec-label { grid-column: 1 / -1; }
+  #contact .card { margin-bottom: 0; }
+
+  /* Quote form — more breathing room */
+  #quote .form-inner { padding: 1.5rem; }
 }

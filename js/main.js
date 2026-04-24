@@ -3,8 +3,46 @@
 ═══════════════════════════════════════════════ */
 const SERVICES = [
   {
+    id: 'design',
+    photo: './Fotos/Services/Graphic Design 1.png',
+    color: '#FF3333',
+    es: {
+      title: 'Diseño Gráfico',
+      sub: 'Creatividad sin límites',
+      desc: 'Desde identidad visual completa hasta piezas específicas para gran formato. Diseño estratégico que convierte y posiciona tu marca.',
+      features: ['Branding', 'Gran Formato', 'Digital', 'Retoque'],
+      wa: 'Hola! 👋 Me interesa cotizar *Diseño Gráfico* para mi proyecto. ¿Podrían contactarme?'
+    },
+    en: {
+      title: 'Graphic Design',
+      sub: 'Creativity without limits',
+      desc: 'From complete visual identity to specific large format pieces. Strategic design that converts and positions your brand.',
+      features: ['Branding', 'Large Format', 'Digital', 'Retouching'],
+      wa: 'Hi! 👋 I\'m interested in *Graphic Design* for my project. Could you contact me?'
+    }
+  },
+  {
+    id: 'signs',
+    photo: './Fotos/Services/Exterior Signs 2.png',
+    color: '#FF9900',
+    es: {
+      title: 'Señales Exteriores',
+      sub: 'Fachadas imposibles de ignorar',
+      desc: 'Letras en canal, letras inversas y señales de acrílico iluminadas con LED que destacan tu negocio de día y de noche.',
+      features: ['Channel Letters', 'Reverse Letters', 'Acrylic Signs', 'LED Illuminated'],
+      wa: 'Hola! 👋 Me interesa cotizar *Señales Exteriores* para mi negocio. ¿Tienen disponibilidad y podrían darme precios?'
+    },
+    en: {
+      title: 'Exterior Signs',
+      sub: 'Facades impossible to ignore',
+      desc: 'Channel letters, reverse letters and LED-illuminated acrylic signs that make your business stand out day and night.',
+      features: ['Channel Letters', 'Reverse Letters', 'Acrylic Signs', 'LED Illuminated'],
+      wa: 'Hi! 👋 I\'m interested in *Exterior Signs* for my business. Do you have availability and could you give me pricing?'
+    }
+  },
+  {
     id: 'carwraps',
-    photo: './Fotos/carros wraps.jpg',
+    photo: './Fotos/Services/Car Wraps 3.png',
     color: '#0099CC',
     es: {
       title: 'Car Wraps',
@@ -22,79 +60,41 @@ const SERVICES = [
     }
   },
   {
-    id: 'signs',
-    photo: './Fotos/exterior signs.jpg',
-    color: '#FF3333',
-    es: {
-      title: 'Señales Exteriores',
-      sub: 'Fachadas imposibles de ignorar',
-      desc: 'Letras en canal, letras inversas y señales de acrílico iluminadas con LED que destacan tu negocio de día y de noche.',
-      features: ['Channel Letters', 'Reverse Letters', 'Acrylic Signs', 'LED Illuminated'],
-      wa: 'Hola! 👋 Me interesa cotizar *Señales Exteriores* para mi negocio. ¿Tienen disponibilidad y podrían darme precios?'
-    },
-    en: {
-      title: 'Exterior Signs',
-      sub: 'Facades impossible to ignore',
-      desc: 'Channel letters, reverse letters and LED-illuminated acrylic signs that make your business stand out day and night.',
-      features: ['Channel Letters', 'Reverse Letters', 'Acrylic Signs', 'LED Illuminated'],
-      wa: 'Hi! 👋 I\'m interested in *Exterior Signs* for my business. Do you have availability and could you give me pricing?'
-    }
-  },
-  {
-    id: 'logos3d',
-    photo: './Fotos/dimensional logos.jpg',
+    id: 'interior',
+    photo: './Fotos/Services/Interior Signs 4.png',
     color: '#FFCC00',
     es: {
-      title: 'Logos Dimensionales',
-      sub: 'Identidad que impresiona',
-      desc: 'Letras y logos 3D en metal, acrílico, PVC y LED para recepciones, lobbies y fachadas corporativas que dejan huella.',
-      features: ['Metal', 'Acrílico', 'PVC', 'LED Backlit'],
-      wa: 'Hola! 👋 Me interesa cotizar un *Logo Dimensional* para nuestra empresa. ¿Qué materiales tienen disponibles?'
+      title: 'Señales Interiores',
+      sub: 'Orienta y refuerza tu marca',
+      desc: 'Señales direccionales, ADA, placas de oficina y displays de lobby que guían a tus clientes y reflejan la identidad de tu empresa.',
+      features: ['Wayfinding', 'ADA Signs', 'Office Plaques', 'Lobby Displays'],
+      wa: 'Hola! 👋 Me interesa cotizar *Señales Interiores* para nuestra empresa. ¿Qué opciones tienen disponibles?'
     },
     en: {
-      title: 'Dimensional Logos',
-      sub: 'Identity that impresses',
-      desc: '3D letters and logos in metal, acrylic, PVC and LED for lobbies and corporate facades that leave a lasting impression.',
-      features: ['Metal', 'Acrylic', 'PVC', 'LED Backlit'],
-      wa: 'Hi! 👋 I\'m interested in a *Dimensional Logo* for our company. What materials do you have available?'
+      title: 'Interior Signs',
+      sub: 'Guide visitors & reinforce your brand',
+      desc: 'Directional signs, ADA signs, office plaques and lobby displays that guide your clients and reflect your company identity.',
+      features: ['Wayfinding', 'ADA Signs', 'Office Plaques', 'Lobby Displays'],
+      wa: 'Hi! 👋 I\'m interested in *Interior Signs* for our company. What options do you have available?'
     }
   },
   {
-    id: 'murals',
-    photo: './Fotos/wall graphics.jpg',
-    color: '#FF9900',
-    es: {
-      title: 'Gráficos Murales',
-      sub: 'Espacios que cuentan historias',
-      desc: 'Transformamos paredes en experiencias visuales únicas. Canvas, mate, brillante — cada textura, cada concepto, diseñado a medida.',
-      features: ['Canvas', 'Matte', 'Gloss', 'Custom Murals'],
-      wa: 'Hola! 👋 Me interesa cotizar *Gráficos Murales* para nuestro espacio. ¿Podrían contactarme con más información?'
-    },
-    en: {
-      title: 'Wall Graphics',
-      sub: 'Spaces that tell stories',
-      desc: 'We transform walls into unique visual experiences. Canvas, matte, gloss — every texture, every concept, custom designed.',
-      features: ['Canvas', 'Matte', 'Gloss', 'Custom Murals'],
-      wa: 'Hi! 👋 I\'m interested in *Wall Graphics* for our space. Could you contact me with more information?'
-    }
-  },
-  {
-    id: 'vinyl',
-    photo: './Fotos/windows vinyls.jpg',
+    id: 'storefront',
+    photo: './Fotos/Services/Storefront 5.png',
     color: '#06b6d4',
     es: {
-      title: 'Vinil de Ventana',
-      sub: 'Privacidad con estilo',
-      desc: 'Vinil perforado, esmerilado y sólido para privacidad, decoración y branding en vidrieras y ventanas de oficina.',
-      features: ['Perforated', 'Frosted', 'Solid Vinyl', 'One-Way Vision'],
-      wa: 'Hola! 👋 Me interesa cotizar *Vinil de Ventana* para mi local. ¿Qué tipos de vinil trabajan?'
+      title: 'Storefront / Fachada',
+      sub: 'Primera impresión que vende',
+      desc: 'Identifica y decora tu local con vinil en vidrieras, gráficos de entrada, letreros de puerta y displays que atraen clientes desde la calle.',
+      features: ['Window Graphics', 'Door Signs', 'Awning Wraps', 'Entrance Displays'],
+      wa: 'Hola! 👋 Me interesa cotizar *Storefront / Fachada* para mi local. ¿Podrían darme un presupuesto?'
     },
     en: {
-      title: 'Window Vinyl',
-      sub: 'Privacy with style',
-      desc: 'Perforated, frosted and solid vinyl for privacy, decoration and branding on storefronts and office windows.',
-      features: ['Perforated', 'Frosted', 'Solid Vinyl', 'One-Way Vision'],
-      wa: 'Hi! 👋 I\'m interested in *Window Vinyl* for my location. What types of vinyl do you work with?'
+      title: 'Storefront',
+      sub: 'First impression that sells',
+      desc: 'Brand and decorate your space with window vinyl, entry graphics, door signs and displays that attract customers from the street.',
+      features: ['Window Graphics', 'Door Signs', 'Awning Wraps', 'Entrance Displays'],
+      wa: 'Hi! 👋 I\'m interested in *Storefront* branding for my location. Could you give me a quote?'
     }
   },
   {
@@ -115,44 +115,6 @@ const SERVICES = [
       features: ['Business Cards', 'Brochures', 'Roll-Up Banners', 'Folders'],
       wa: 'Hi! 👋 I\'m interested in *Corporate Materials* for my company. Could you give me a quote?'
     }
-  },
-  {
-    id: 'printing',
-    photo: './Fotos/Frame 2147240346.jpg',
-    color: '#25D366',
-    es: {
-      title: 'Impresión & Láser',
-      sub: 'Precisión en cada detalle',
-      desc: 'Impresión de gran formato y corte láser de alta precisión en acrílico, madera, vinilo y más. Acabados de nivel premium.',
-      features: ['Gran Formato', 'Corte Láser', 'Acrílico', 'Personalizado'],
-      wa: 'Hola! 👋 Me interesa cotizar servicios de *Impresión y Corte Láser*. ¿Qué materiales manejan?'
-    },
-    en: {
-      title: 'Printing & Laser',
-      sub: 'Precision in every detail',
-      desc: 'Large format printing and high-precision laser cutting on acrylic, wood, vinyl and more. Premium-level finishes.',
-      features: ['Large Format', 'Laser Cut', 'Acrylic', 'Custom'],
-      wa: 'Hi! 👋 I\'m interested in *Printing & Laser Cutting* services. What materials do you handle?'
-    }
-  },
-  {
-    id: 'design',
-    photo: './Fotos/career woman 1.jpg',
-    color: '#FF3333',
-    es: {
-      title: 'Diseño Gráfico',
-      sub: 'Creatividad sin límites',
-      desc: 'Desde identidad visual completa hasta piezas específicas para gran formato. Diseño estratégico que convierte y posiciona tu marca.',
-      features: ['Branding', 'Gran Formato', 'Digital', 'Retoque'],
-      wa: 'Hola! 👋 Me interesa cotizar *Diseño Gráfico* para mi proyecto. ¿Podrían contactarme?'
-    },
-    en: {
-      title: 'Graphic Design',
-      sub: 'Creativity without limits',
-      desc: 'From complete visual identity to specific large format pieces. Strategic design that converts and positions your brand.',
-      features: ['Branding', 'Large Format', 'Digital', 'Retouching'],
-      wa: 'Hi! 👋 I\'m interested in *Graphic Design* for my project. Could you contact me?'
-    }
   }
 ];
 
@@ -167,28 +129,34 @@ const T = {
     label_contact: 'Contáctanos',
     label_location: 'Ubicación',
     label_hours: 'Horarios',
-    label_form: 'Cotización Rápida',
+    label_form: 'Cotización',
     phone1_sub: 'Llámanos ahora',
     phone2_sub: 'Segunda línea',
     wa_title: 'WhatsApp',
     wa_sub: 'Cotiza por mensaje',
     email_title: 'Email',
-    addr_title: '6135 NW 167th St Suite E16, Hialeah FL',
+    addr_title: '6135 NW 167th St, Suite E16, Hialeah, FL 33015',
     addr_sub: 'Ver en Google Maps',
     hours_wf: 'Lun – Vie',
-    hours_sa: 'Sábado',
+    hours_sd: 'Sáb & Dom',
+    hours_appt: 'By Appointment Only',
     form_name: 'Nombre',
-    form_phone: 'Teléfono o Email',
+    form_company: 'Empresa',
+    form_phone: 'Teléfono',
+    form_email: 'Email',
     form_service: 'Servicio de interés',
-    form_submit: 'Enviar por WhatsApp',
+    form_submit: 'Enviar por Email',
     form_select: 'Selecciona un servicio...',
+    ph_name: 'Tu nombre',
+    ph_company: 'Tu empresa',
+    ph_email: 'tu@email.com',
     modal_quote: 'Cotizar por WhatsApp',
     modal_call: 'Llamar ahora',
     carousel_hint: 'Toca para ver más →',
     sbar_quote: 'Cotizar',
     sbar_wa: 'WhatsApp',
     sbar_call: 'Llamar',
-    footer: '© 2026 Praxis Graphics & Signs · Hialeah, FL',
+    footer: '© 2026 Praxis Graphics & Signs',
   },
   en: {
     tagline: 'Graphics & Signs · Hialeah, Miami FL',
@@ -197,28 +165,34 @@ const T = {
     label_contact: 'Contact Us',
     label_location: 'Location',
     label_hours: 'Hours',
-    label_form: 'Quick Quote',
+    label_form: 'Get a Quote',
     phone1_sub: 'Call us now',
     phone2_sub: 'Second line',
     wa_title: 'WhatsApp',
     wa_sub: 'Get a quote by message',
     email_title: 'Email',
-    addr_title: '6135 NW 167th St Suite E16, Hialeah FL',
+    addr_title: '6135 NW 167th St, Suite E16, Hialeah, FL 33015',
     addr_sub: 'View on Google Maps',
     hours_wf: 'Mon – Fri',
-    hours_sa: 'Saturday',
+    hours_sd: 'Sat & Sun',
+    hours_appt: 'By Appointment Only',
     form_name: 'Name',
-    form_phone: 'Phone or Email',
+    form_company: 'Company',
+    form_phone: 'Phone',
+    form_email: 'Email',
     form_service: 'Service of interest',
-    form_submit: 'Send via WhatsApp',
+    form_submit: 'Send via Email',
     form_select: 'Select a service...',
+    ph_name: 'Your name',
+    ph_company: 'Your company',
+    ph_email: 'your@email.com',
     modal_quote: 'Get a WhatsApp Quote',
     modal_call: 'Call Now',
     carousel_hint: 'Tap to see more →',
     sbar_quote: 'Quote',
     sbar_wa: 'WhatsApp',
     sbar_call: 'Call',
-    footer: '© 2026 Praxis Graphics & Signs · Hialeah, FL',
+    footer: '© 2026 Praxis Graphics & Signs',
   }
 };
 
@@ -247,6 +221,10 @@ function applyLang(l) {
   all('[data-i18n]').forEach(el => {
     const k = el.dataset.i18n;
     if (t[k] !== undefined) el.textContent = t[k];
+  });
+  all('[data-i18n-placeholder]').forEach(el => {
+    const k = el.dataset.i18nPlaceholder;
+    if (t[k] !== undefined) el.placeholder = t[k];
   });
   buildCarousel();
   buildFormSelect();
@@ -455,19 +433,22 @@ function buildFormSelect() {
   if (!sel) return;
   const t = T[lang];
   sel.innerHTML = `<option value="">${t.form_select}</option>` +
-    SERVICES.map(s => `<option value="${s[lang].wa}">${s[lang].title}</option>`).join('');
+    SERVICES.map(s => `<option value="${s[lang].title}">${s[lang].title}</option>`).join('');
 }
 
 $('contactForm')?.addEventListener('submit', e => {
   e.preventDefault();
   const name    = $('formName').value.trim();
+  const company = $('formCompany').value.trim();
   const phone   = $('formPhone').value.trim();
-  const service = $('formService').value;
-  const t = T[lang];
-  const msg = service
-    ? service.replace('Hola! 👋', `Hola! 👋 Soy ${name || 'un cliente'} (${phone || 'sin tel.'}).`)
-    : `Hola! 👋 Soy ${name}${phone ? ' (' + phone + ')' : ''}. Me gustaría recibir más información sobre sus servicios.`;
-  window.open(`https://wa.me/17863338097?text=${encodeURIComponent(msg)}`, '_blank');
+  const email   = $('formEmail').value.trim();
+  const sel     = $('formService');
+  const service = sel.options[sel.selectedIndex]?.text || '';
+  const subject = encodeURIComponent(`Quote Request${service && service !== T[lang].form_select ? ' – ' + service : ''}`);
+  const body = encodeURIComponent(
+    `Name: ${name || '—'}\nCompany: ${company || '—'}\nPhone: ${phone || '—'}\nEmail: ${email || '—'}\nService: ${service || '—'}`
+  );
+  window.location.href = `mailto:info@praxisgraphics.com?subject=${subject}&body=${body}`;
 });
 
 /* ═══════════════════════════════════════════════
@@ -553,6 +534,9 @@ function animate() {
     });
     gsap.set(el, { opacity: 1 });
   });
+
+  // Nav logo slide-in
+  gsap.from('.nav-logo-img', { x: -70, opacity: 0, duration: .7, ease: 'power3.out' });
 
   // Hero entrance
   gsap.timeline({ defaults: { ease: 'power3.out' } })
