@@ -134,6 +134,25 @@ const SERVICES = [
       features: ['Large Format', 'Flyers & Posters', 'Banners', 'Canvas Prints'],
       wa: 'Hi! 👋 I\'m interested in *Printing* services. Could you contact me with pricing and specs?'
     }
+  },
+  {
+    id: 'marketing',
+    photo: './Fotos/Services/marketing.jpg',
+    color: '#FF9900',
+    es: {
+      title: 'Marketing Digital',
+      sub: 'Presencia online que convierte',
+      desc: 'Diseño y desarrollo web, creación de contenido y videos, gestión de redes sociales y estrategias digitales para posicionar tu compañía y atraer clientes.',
+      features: ['Páginas Web', 'Videos', 'Redes Sociales', 'Estrategia Digital'],
+      wa: 'Hola! 👋 Me interesa cotizar *Marketing Digital* para mi compañía. ¿Podrían contactarme?'
+    },
+    en: {
+      title: 'Digital Marketing',
+      sub: 'Online presence that converts',
+      desc: 'Web design & development, content and video creation, social media management and digital strategies to position your brand and attract more clients.',
+      features: ['Web Design', 'Video Creation', 'Social Media', 'Digital Strategy'],
+      wa: 'Hi! 👋 I\'m interested in *Digital Marketing* for my company. Could you contact me?'
+    }
   }
 ];
 
@@ -165,7 +184,7 @@ const T = {
     form_email: 'Email',
     form_service: 'Servicio de interés',
     form_submit: 'Enviar por Email',
-    ph_service: 'Describe lo que necesitas...',
+    ph_service: '¿Qué necesitas?',
     ph_name: 'Nombre completo',
     ph_company: 'Nombre de compañía',
     ph_email: 'email@compania.com',
@@ -201,7 +220,7 @@ const T = {
     form_email: 'Email',
     form_service: 'Service of interest',
     form_submit: 'Send via Email',
-    ph_service: 'Describe what you need...',
+    ph_service: 'What do you need?',
     ph_name: 'Full name',
     ph_company: 'Company name',
     ph_email: 'email@company.com',
