@@ -183,7 +183,7 @@ const T = {
     form_phone: 'Teléfono',
     form_email: 'Email',
     form_service: 'Servicio de interés',
-    form_submit: 'Enviar por Email',
+    form_submit: 'Enviar solicitud',
     ph_service: '¿Qué necesitas?',
     ph_name: 'Nombre completo',
     ph_company: 'Nombre de compañía',
@@ -219,7 +219,7 @@ const T = {
     form_phone: 'Phone',
     form_email: 'Email',
     form_service: 'Service of interest',
-    form_submit: 'Send via Email',
+    form_submit: 'Send request',
     ph_service: 'What do you need?',
     ph_name: 'Full name',
     ph_company: 'Company name',
@@ -466,21 +466,47 @@ document.addEventListener('keydown', e => {
 
 $('contactForm')?.addEventListener('submit', e => {
   e.preventDefault();
+  const form    = e.target;
+  const btn     = form.querySelector('.btn-submit-email');
   const name    = $('formName').value.trim();
   const company = $('formCompany').value.trim();
   const phone   = $('formPhone').value.trim();
   const email   = $('formEmail').value.trim();
   const service = $('formService').value.trim();
-  const isEs = lang === 'es';
-  const subject = encodeURIComponent(
-    isEs ? 'Solicitud de Cotización' : 'Quote Request'
-  );
-  const body = encodeURIComponent(
-    isEs
-      ? `Nombre: ${name || '—'}\nCompañía: ${company || '—'}\nTeléfono: ${phone || '—'}\nEmail: ${email || '—'}\nServicio: ${service || '—'}`
-      : `Name: ${name || '—'}\nCompany: ${company || '—'}\nPhone: ${phone || '—'}\nEmail: ${email || '—'}\nService: ${service || '—'}`
-  );
-  window.location.href = `mailto:info@praxisgraphics.com?subject=${subject}&body=${body}`;
+
+  btn.disabled = true;
+  btn.style.opacity = '.6';
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      'form-name': 'cotizacion',
+      nombre:   name,
+      compania: company,
+      telefono: phone,
+      email:    email,
+      servicio: service
+    }).toString()
+  })
+  .then(() => {
+    const span = btn.querySelector('span');
+    span.textContent = lang === 'es' ? '¡Enviado! ✓' : 'Sent! ✓';
+    btn.style.background = '#25D366';
+    btn.style.opacity = '1';
+    form.reset();
+    setTimeout(() => {
+      span.setAttribute('data-i18n', 'form_submit');
+      span.textContent = T[lang].form_submit;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3500);
+  })
+  .catch(() => {
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    alert(lang === 'es' ? 'Error al enviar. Intenta de nuevo.' : 'Error sending. Please try again.');
+  });
 });
 
 /* ═══════════════════════════════════════════════
