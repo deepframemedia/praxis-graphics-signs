@@ -115,6 +115,25 @@ const SERVICES = [
       features: ['Business Cards', 'Brochures', 'Roll-Up Banners', 'Folders'],
       wa: 'Hi! 👋 I\'m interested in *Corporate Materials* for my company. Could you give me a quote?'
     }
+  },
+  {
+    id: 'printing',
+    photo: './Fotos/Services/Printing.PNG',
+    color: '#25D366',
+    es: {
+      title: 'Printing',
+      sub: 'Impresión de alta calidad',
+      desc: 'Impresión digital y offset en gran formato y tirajes cortos. Flyers, posters, banners, lonas y más con acabados profesionales.',
+      features: ['Gran Formato', 'Flyers & Posters', 'Banners', 'Lonas'],
+      wa: 'Hola! 👋 Me interesa cotizar *Printing* para mi proyecto. ¿Podrían contactarme con precios y especificaciones?'
+    },
+    en: {
+      title: 'Printing',
+      sub: 'High-quality printing',
+      desc: 'Digital and offset printing for large format and short runs. Flyers, posters, banners, canvas prints and more with professional finishes.',
+      features: ['Large Format', 'Flyers & Posters', 'Banners', 'Canvas Prints'],
+      wa: 'Hi! 👋 I\'m interested in *Printing* services. Could you contact me with pricing and specs?'
+    }
   }
 ];
 
@@ -147,9 +166,9 @@ const T = {
     form_service: 'Servicio de interés',
     form_submit: 'Enviar por Email',
     form_select: 'Selecciona un servicio...',
-    ph_name: 'Tu nombre',
-    ph_company: 'Tu empresa',
-    ph_email: 'tu@email.com',
+    ph_name: 'Nombre completo',
+    ph_company: 'Nombre de empresa',
+    ph_email: 'email@empresa.com',
     modal_quote: 'Cotizar por WhatsApp',
     modal_call: 'Llamar ahora',
     carousel_hint: 'Toca para ver más →',
@@ -183,9 +202,9 @@ const T = {
     form_service: 'Service of interest',
     form_submit: 'Send via Email',
     form_select: 'Select a service...',
-    ph_name: 'Your name',
-    ph_company: 'Your company',
-    ph_email: 'your@email.com',
+    ph_name: 'Full name',
+    ph_company: 'Company name',
+    ph_email: 'email@company.com',
     modal_quote: 'Get a WhatsApp Quote',
     modal_call: 'Call Now',
     carousel_hint: 'Tap to see more →',
@@ -444,9 +463,16 @@ $('contactForm')?.addEventListener('submit', e => {
   const email   = $('formEmail').value.trim();
   const sel     = $('formService');
   const service = sel.options[sel.selectedIndex]?.text || '';
-  const subject = encodeURIComponent(`Quote Request${service && service !== T[lang].form_select ? ' – ' + service : ''}`);
+  const isEs = lang === 'es';
+  const subject = encodeURIComponent(
+    isEs
+      ? `Solicitud de Cotización${service && service !== T[lang].form_select ? ' – ' + service : ''}`
+      : `Quote Request${service && service !== T[lang].form_select ? ' – ' + service : ''}`
+  );
   const body = encodeURIComponent(
-    `Name: ${name || '—'}\nCompany: ${company || '—'}\nPhone: ${phone || '—'}\nEmail: ${email || '—'}\nService: ${service || '—'}`
+    isEs
+      ? `Nombre: ${name || '—'}\nEmpresa: ${company || '—'}\nTeléfono: ${phone || '—'}\nEmail: ${email || '—'}\nServicio: ${service || '—'}`
+      : `Name: ${name || '—'}\nCompany: ${company || '—'}\nPhone: ${phone || '—'}\nEmail: ${email || '—'}\nService: ${service || '—'}`
   );
   window.location.href = `mailto:info@praxisgraphics.com?subject=${subject}&body=${body}`;
 });
