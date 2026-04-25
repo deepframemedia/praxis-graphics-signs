@@ -26,11 +26,11 @@ const SERVICES = [
     photo: './Fotos/Services/Exterior Signs 2.png',
     color: '#FF9900',
     es: {
-      title: 'Señales Exteriores',
-      sub: 'Fachadas imposibles de ignorar',
-      desc: 'Letras en canal, letras inversas y señales de acrílico iluminadas con LED que destacan tu negocio de día y de noche.',
+      title: 'Carteles de Exteriores',
+      sub: 'Presencia que no pasa desapercibida',
+      desc: 'Letras en canal, letras reversas y carteles de acrílico con iluminación LED que hacen que tu negocio destaque de día y de noche.',
       features: ['Channel Letters', 'Reverse Letters', 'Acrylic Signs', 'LED Illuminated'],
-      wa: 'Hola! 👋 Me interesa cotizar *Señales Exteriores* para mi negocio. ¿Tienen disponibilidad y podrían darme precios?'
+      wa: 'Hola! 👋 Me interesa cotizar *Carteles de Exteriores* para mi negocio. ¿Tienen disponibilidad y podrían darme precios?'
     },
     en: {
       title: 'Exterior Signs',
@@ -64,11 +64,11 @@ const SERVICES = [
     photo: './Fotos/Services/Interior Signs 4.png',
     color: '#FFCC00',
     es: {
-      title: 'Señales Interiores',
-      sub: 'Orienta y refuerza tu marca',
-      desc: 'Señales direccionales, ADA, placas de oficina y displays de lobby que guían a tus clientes y reflejan la identidad de tu empresa.',
+      title: 'Señalización Interior',
+      sub: 'Guía a tus clientes, refuerza tu marca',
+      desc: 'Señalización direccional, ADA, placas de oficina y displays de lobby que orientan a tus clientes y proyectan la identidad de tu compañía.',
       features: ['Wayfinding', 'ADA Signs', 'Office Plaques', 'Lobby Displays'],
-      wa: 'Hola! 👋 Me interesa cotizar *Señales Interiores* para nuestra empresa. ¿Qué opciones tienen disponibles?'
+      wa: 'Hola! 👋 Me interesa cotizar *Señalización Interior* para nuestra compañía. ¿Qué opciones tienen disponibles?'
     },
     en: {
       title: 'Interior Signs',
@@ -160,15 +160,15 @@ const T = {
     hours_sd: 'Sáb & Dom',
     hours_appt: 'By Appointment Only',
     form_name: 'Nombre',
-    form_company: 'Empresa',
+    form_company: 'Compañía',
     form_phone: 'Teléfono',
     form_email: 'Email',
     form_service: 'Servicio de interés',
     form_submit: 'Enviar por Email',
-    form_select: 'Selecciona un servicio...',
+    ph_service: 'Describe lo que necesitas...',
     ph_name: 'Nombre completo',
-    ph_company: 'Nombre de empresa',
-    ph_email: 'email@empresa.com',
+    ph_company: 'Nombre de compañía',
+    ph_email: 'email@compania.com',
     modal_quote: 'Cotizar por WhatsApp',
     modal_call: 'Llamar ahora',
     carousel_hint: 'Toca para ver más →',
@@ -201,7 +201,7 @@ const T = {
     form_email: 'Email',
     form_service: 'Service of interest',
     form_submit: 'Send via Email',
-    form_select: 'Select a service...',
+    ph_service: 'Describe what you need...',
     ph_name: 'Full name',
     ph_company: 'Company name',
     ph_email: 'email@company.com',
@@ -246,7 +246,6 @@ function applyLang(l) {
     if (t[k] !== undefined) el.placeholder = t[k];
   });
   buildCarousel();
-  buildFormSelect();
 }
 
 
@@ -395,9 +394,7 @@ function openModal(idx) {
   $('modal-desc').textContent = t.desc;
 
   const feats = $('modal-features');
-  feats.innerHTML = t.features.map(f =>
-    `<span class="m-feat" style="border-color:${svc.color}22;color:${svc.color}">${f}</span>`
-  ).join('');
+  if (feats) feats.innerHTML = '';
 
   $('modal-wa-btn').querySelector('span').textContent = T[lang].modal_quote;
   $('modal-call-btn').querySelector('span').textContent = T[lang].modal_call;
@@ -447,13 +444,6 @@ document.addEventListener('keydown', e => {
 /* ═══════════════════════════════════════════════
    CONTACT FORM
 ═══════════════════════════════════════════════ */
-function buildFormSelect() {
-  const sel = $('formService');
-  if (!sel) return;
-  const t = T[lang];
-  sel.innerHTML = `<option value="">${t.form_select}</option>` +
-    SERVICES.map(s => `<option value="${s[lang].title}">${s[lang].title}</option>`).join('');
-}
 
 $('contactForm')?.addEventListener('submit', e => {
   e.preventDefault();
@@ -461,17 +451,14 @@ $('contactForm')?.addEventListener('submit', e => {
   const company = $('formCompany').value.trim();
   const phone   = $('formPhone').value.trim();
   const email   = $('formEmail').value.trim();
-  const sel     = $('formService');
-  const service = sel.options[sel.selectedIndex]?.text || '';
+  const service = $('formService').value.trim();
   const isEs = lang === 'es';
   const subject = encodeURIComponent(
-    isEs
-      ? `Solicitud de Cotización${service && service !== T[lang].form_select ? ' – ' + service : ''}`
-      : `Quote Request${service && service !== T[lang].form_select ? ' – ' + service : ''}`
+    isEs ? 'Solicitud de Cotización' : 'Quote Request'
   );
   const body = encodeURIComponent(
     isEs
-      ? `Nombre: ${name || '—'}\nEmpresa: ${company || '—'}\nTeléfono: ${phone || '—'}\nEmail: ${email || '—'}\nServicio: ${service || '—'}`
+      ? `Nombre: ${name || '—'}\nCompañía: ${company || '—'}\nTeléfono: ${phone || '—'}\nEmail: ${email || '—'}\nServicio: ${service || '—'}`
       : `Name: ${name || '—'}\nCompany: ${company || '—'}\nPhone: ${phone || '—'}\nEmail: ${email || '—'}\nService: ${service || '—'}`
   );
   window.location.href = `mailto:info@praxisgraphics.com?subject=${subject}&body=${body}`;
